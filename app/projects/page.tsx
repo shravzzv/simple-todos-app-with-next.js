@@ -3,10 +3,9 @@ import useSWR from 'swr'
 import fetcher from '../utils/fetcher'
 
 const Projects = () => {
-  const { data, error, isLoading } = useSWR(
-    `http://localhost:3000/api`,
-    fetcher
-  )
+  const url = 'https://simple-todos-app-with-next-js.vercel.app/api/'
+
+  const { data, error, isLoading } = useSWR(url, fetcher)
 
   if (isLoading) {
     return (
